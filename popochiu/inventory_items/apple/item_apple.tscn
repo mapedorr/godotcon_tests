@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi5mosemc8fw1"]
+
+[ext_resource type="Script" path="res://popochiu/inventory_items/apple/item_apple.gd" id="1_mkeed"]
+[ext_resource type="Texture2D" uid="uid://bp7pp18m6ufck" path="res://popochiu/inventory_items/apple/apple.png" id="1_y4alf"]
+
+[node name="ItemApple" type="TextureRect"]
+texture_filter = 1
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_y4alf")
+script = ExtResource("1_mkeed")
+description = "Apple"
+script_name = "Apple"

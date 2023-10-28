@@ -114,6 +114,9 @@ func _create() -> void:
 	new_item.cursor = Constants.CURSOR_TYPE.USE
 	new_item.size_flags_vertical = new_item.SIZE_SHRINK_CENTER
 	
+	if PopochiuResources.get_settings().is_pixel_art_game:
+		new_item.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	
 	# ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 	# Save the item scene (.tscn)
 	var new_item_packed_scene: PackedScene = PackedScene.new()

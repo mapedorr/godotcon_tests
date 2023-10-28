@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://popochiu/inventory_items/key/item_key.gd" id="1_kbk40"]
 [ext_resource type="Texture2D" uid="uid://d1tp0qwxoa5t1" path="res://popochiu/inventory_items/key/key.png" id="1_xysia"]
 
-[node name="Itemkey" type="TextureRect"]
+[node name="ItemKey" type="TextureRect"]
 texture_filter = 1
 size_flags_vertical = 4
 mouse_filter = 0

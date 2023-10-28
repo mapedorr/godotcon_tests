@@ -29,11 +29,16 @@ func _on_right_click() -> void:
 
 # When the node is clicked and there is an inventory item selected
 func _on_item_used(item: PopochiuInventoryItem) -> void:
-	# Replace the call to super.on_item_used(item) to implement your code.
-	# E.g. you can make the PC react checked using some items in this Prop
-#	if item.script_name == 'Key':
-#		await C.player.say("I can't do that")
-	super.on_item_used(item)
+	await C.player.walk_to_clicked()
+	await C.player.face_clicked()
+	
+	if item == I.Hook:
+		await A.sfx_tree_impact.play(true)
+		await A.sfx_apple_fall.play()
+		await I.Hook.remove()
+		await change_frame(1)
+		await I.Apple.add()
+		await C.player.say("I have the apple for Popsy")
 
 
 # When an inventory item linked to this Prop (link_to_item) is removed from

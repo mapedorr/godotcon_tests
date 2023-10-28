@@ -8,7 +8,21 @@ extends PopochiuProp
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░
 # When the node is clicked
 func _on_click() -> void:
-	pass
+	await C.player.walk_to_clicked()
+	await C.player.face_clicked()
+	
+	match current_frame:
+		0:
+			await A.sfx_container_locked.play(true)
+			await C.player.say("I need a key to open it")
+		1:
+			await change_frame(2)
+			await A.sfx_container_open.play(true)
+			await C.player.say("I think I can use this hook to grab the apple")
+			await change_frame(3)
+			await I.Hook.add()
+		3:
+			await C.player.say("Its empty")
 
 
 # When the node is right clicked
@@ -23,7 +37,13 @@ func _on_right_click() -> void:
 
 # When the node is clicked and there is an inventory item selected
 func _on_item_used(item: PopochiuInventoryItem) -> void:
-	pass
+	await C.player.walk_to_clicked()
+	await C.player.face_clicked()
+	
+	if item.script_name == "Key":
+		await I.Key.remove()
+		await change_frame(1)
+		await C.player.say("Now I can open it!")
 
 
 # When an inventory item linked to this Prop (link_to_item) is removed from

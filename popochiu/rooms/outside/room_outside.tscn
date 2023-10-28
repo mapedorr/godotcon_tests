@@ -47,6 +47,7 @@ position = Vector2(23, 73)
 texture = ExtResource("9_okrqj")
 frames = 2
 baseline = 50
+walk_to_point = Vector2(35, 60)
 
 [node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Tree"]
 polygon = PackedVector2Array(-9, 53, -10, 0, -36, -6, -35, -43, -13, -62, 24, -59, 35, -31, 33, -9, 14, 2, 18, 57)
