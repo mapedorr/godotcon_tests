@@ -6,18 +6,15 @@ extends PopochiuProp
 
 
 # ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ VIRTUAL ░░░░
-func _on_room_set() -> void:
-	current_frame = 0
-
-
 # When the node is clicked
 func _on_click() -> void:
-	await C.player.walk_to_clicked()
-	await C.player.face_clicked()
-	await A.sfx_door_open.play()
-	await change_frame(1)
-	
-	E.goto_room("Outside")
+	# Replace the call to super.on_click() to implement your code.
+	# E.g. you can make the character walk to the Prop and then say
+	# something:
+#	await C.player.walk_to_clicked()
+#	await C.player.face_clicked()
+#	await C.player.say("Not picking that up!")
+	super.on_click()
 
 
 # When the node is right clicked

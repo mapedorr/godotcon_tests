@@ -17,5 +17,7 @@ var vo_popsy_normal_05: AudioCueSound = load("res://popochiu/characters/popsy/au
 var vo_popsy_sad_02: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_02.tres")
 var vo_popsy_sad_04: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_04.tres")
 var vo_popsy_sad_06: AudioCueSound = load("res://popochiu/characters/popsy/audio/vo_popsy_sad_06.tres")
+var sfx_door_close: AudioCueSound = load("res://popochiu/rooms/house/props/door/sfx_door_close.tres")
+var sfx_door_open: AudioCueSound = load("res://popochiu/rooms/house/props/door/sfx_door_open.tres")
 # ---- cues
 
