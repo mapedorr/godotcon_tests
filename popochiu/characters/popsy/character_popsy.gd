@@ -28,8 +28,15 @@ func _on_right_click() -> void:
 
 # When the node is clicked and there is an inventory item selected
 func _on_item_used(item: PopochiuInventoryItem) -> void:
-	# Replace the call to super.on_item_used(item) to implement your code.
-	super.on_item_used(item)
+	if item == I.Apple:
+		await I.Apple.remove()
+		await C.Goddiu.say("Here it is")
+		await C.Goddiu.say("An apple for ya")
+		await C.Popsy.say("[wave]Yeeeeeyyyyyyy[/wave]", "happy")
+		await C.Popsy.say("But I want a GREEN apple!")
+		
+		Globals.going_to_the_end = true
+		E.goto_room("TheEnd")
 
 
 # Use it to play the idle animation for the character

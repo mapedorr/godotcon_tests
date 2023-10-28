@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cngwmp5a8u8jj"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/the_end/room_the_end_state.gd" id="1_hfod4"]
+
+[resource]
+resource_name = "TheEnd"
+script = ExtResource("1_hfod4")
+script_name = "TheEnd"
+scene = "res://popochiu/rooms/the_end/room_the_end.tscn"
+visited = false
+visited_first_time = false
+visited_times = 0
