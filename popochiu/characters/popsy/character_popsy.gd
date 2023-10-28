@@ -17,7 +17,7 @@ func _on_room_set() -> void:
 
 # When the node is clicked
 func _on_click() -> void:
-	D.TalkWithPopsy.start()
+	D.TalkPopsy.start()
 
 
 # When the node is right clicked
@@ -46,7 +46,7 @@ func _play_walk(target_pos: Vector2) -> void:
 # Use it to play the talk animation for the character
 func _play_talk() -> void:
 	if emotion == "sad":
-		play_animation("sad")
+		play_animation("cry")
 	else:
 		super()
 

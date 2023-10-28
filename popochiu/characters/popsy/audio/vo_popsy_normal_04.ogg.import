@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://br2vdcsundx5t"
-path="res://.godot/imported/vo_popsy_normal_04.ogg-875a1d1159335c1b04ad1fba30fe7446.oggvorbisstr"
+path="res://.godot/imported/vo_popsy_normal_04.ogg-6e5423d89d56ffd4a165c7385cebbf37.oggvorbisstr"
 
 [deps]
 
-source_file="res://popochiu/characters/Popsy/audio/vo_popsy_normal_04.ogg"
-dest_files=["res://.godot/imported/vo_popsy_normal_04.ogg-875a1d1159335c1b04ad1fba30fe7446.oggvorbisstr"]
+source_file="res://popochiu/characters/popsy/audio/vo_popsy_normal_04.ogg"
+dest_files=["res://.godot/imported/vo_popsy_normal_04.ogg-6e5423d89d56ffd4a165c7385cebbf37.oggvorbisstr"]
 
 [params]
 

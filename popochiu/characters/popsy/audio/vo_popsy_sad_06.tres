@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://dsufocb1re311"]
+
+[ext_resource type="AudioStream" uid="uid://cqeyvk02d68dy" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_06.ogg" id="1_hc6n3"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_yx1gh"]
+
+[resource]
+resource_name = "vo_popsy_sad_06"
+script = ExtResource("2_yx1gh")
+audio = ExtResource("1_hc6n3")
+loop = false
+is_2d = false
+pitch = 1.0
+volume = 0.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c8hr0dw0crrue" path="res://popochiu/rooms/house/props/table/house_table.png" id="11_sccsq"]
 [ext_resource type="Texture2D" uid="uid://cftirgqkde60t" path="res://popochiu/rooms/house/props/drawer/house_drawer.png" id="12_j0gdk"]
 [ext_resource type="PackedScene" uid="uid://vvwefe0ynimo" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="12_ujkdu"]
-[ext_resource type="PackedScene" uid="uid://f4bb2q6iulyg" path="res://popochiu/characters/popsy/character_popsy.tscn" id="14_ypav6"]
+[ext_resource type="PackedScene" uid="uid://cf31xijmaoif6" path="res://popochiu/characters/popsy/character_popsy.tscn" id="14_ypav6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hlhq1"]
 vertices = PackedVector2Array(21, 1, 86, -18, 154, 39, 58, 53, 20, 15, -18, 52, -12, 18, -151, 41, -128, -12, -24, 10, -20, 0, 3, -5)
