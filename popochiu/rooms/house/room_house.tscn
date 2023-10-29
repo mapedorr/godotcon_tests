@@ -1,0 +1,157 @@
+[gd_scene load_steps=18 format=3 uid="uid://b1b73oofaui5k"]
+
+[ext_resource type="Script" path="res://popochiu/rooms/house/room_house.gd" id="1_f4pqg"]
+[ext_resource type="PackedScene" uid="uid://uvtywyf3pq1a" path="res://addons/popochiu/engine/objects/walkable_area/popochiu_walkable_area.tscn" id="2_3svth"]
+[ext_resource type="PackedScene" uid="uid://bp7p5o4u4qfhy" path="res://popochiu/rooms/house/props/background/prop_background.tscn" id="2_qrxhx"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/walkable_areas/floor/walkable_area_floor.gd" id="3_cqc5h"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/objects/prop/popochiu_prop.gd" id="3_xhr4w"]
+[ext_resource type="Texture2D" uid="uid://b7dkywswravl8" path="res://popochiu/rooms/house/props/background/house_bg.png" id="4_85a6i"]
+[ext_resource type="PackedScene" uid="uid://by5o0gatiuxrc" path="res://popochiu/rooms/house/props/door/prop_door.tscn" id="5_64ub2"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/props/door/prop_door.gd" id="6_jktud"]
+[ext_resource type="Texture2D" uid="uid://7gylxsvnkwov" path="res://popochiu/rooms/house/props/door/house_door.png" id="9_x6s7a"]
+[ext_resource type="PackedScene" uid="uid://dpckssgu3t26g" path="res://popochiu/characters/goddiu/character_goddiu.tscn" id="10_u0ihl"]
+[ext_resource type="PackedScene" uid="uid://dea2djribf3tb" path="res://popochiu/rooms/house/props/drawer/prop_drawer.tscn" id="10_y35yb"]
+[ext_resource type="Script" path="res://popochiu/rooms/house/props/drawer/prop_drawer.gd" id="11_23yav"]
+[ext_resource type="Script" path="res://popochiu/characters/goddiu/character_goddiu.gd" id="11_xpk4l"]
+[ext_resource type="PackedScene" uid="uid://cwe7sprb4aafo" path="res://popochiu/characters/popsy/character_popsy.tscn" id="12_r84fr"]
+[ext_resource type="Texture2D" uid="uid://4ukgsv3xq41o" path="res://popochiu/rooms/house/props/drawer/house_drawer.png" id="12_xek8j"]
+[ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="13_xg1sb"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_hamnw"]
+vertices = PackedVector2Array(-124, -14, 84, -18, 143, 35, 56, 48, -18, 48, -142, 43)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-124, -14, 84, -18, 143, 35, 56, 48, -18, 48, -142, 43)])
+
+[node name="RoomHouse" type="Node2D"]
+script = ExtResource("1_f4pqg")
+script_name = "House"
+
+[node name="WalkableAreas" type="Node2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="WalkableAreas" instance=ExtResource("2_3svth")]
+position = Vector2(160, 90)
+script = ExtResource("3_cqc5h")
+script_name = "Floor"
+description = "Floor"
+
+[node name="Perimeter" type="NavigationRegion2D" parent="WalkableAreas/Floor"]
+modulate = Color(0, 1, 0, 1)
+navigation_polygon = SubResource("NavigationPolygon_hamnw")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Background" type="Area2D" parent="Props" instance=ExtResource("2_qrxhx")]
+z_index = -1
+position = Vector2(160, 90)
+script = ExtResource("3_xhr4w")
+texture = ExtResource("4_85a6i")
+script_name = "Background"
+description = "Background"
+clickable = false
+baseline = -90
+cursor = 1
+
+[node name="Door" type="Area2D" parent="Props" instance=ExtResource("5_64ub2")]
+position = Vector2(75, 49)
+script = ExtResource("6_jktud")
+texture = ExtResource("9_x6s7a")
+frames = 2
+script_name = "Door"
+description = "Door"
+walk_to_point = Vector2(26, 29)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Door"]
+polygon = PackedVector2Array(-9, 21, -11, -6, 2, -26, 24, -24, 30, -7, 29, 22)
+
+[node name="Drawer" type="Area2D" parent="Props" instance=ExtResource("10_y35yb")]
+position = Vector2(26, 82)
+script = ExtResource("11_23yav")
+texture = ExtResource("12_xek8j")
+frames = 2
+script_name = "Drawer"
+description = "Drawer"
+baseline = 4
+walk_to_point = Vector2(23, 6)
+cursor = 1
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="Props/Drawer"]
+polygon = PackedVector2Array(-14, 15, -14, -7, -7, -19, 11, -16, 12, 4, 4, 17)
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="Regions" type="Node2D" parent="."]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="CharacterGoddiu *" type="Area2D" parent="Characters" instance=ExtResource("10_u0ihl")]
+position = Vector2(101, 80)
+script = ExtResource("11_xpk4l")
+flips_when = 2
+popochiu_placeholder = null
+script_name = "Goddiu"
+description = "Goddiu"
+clickable = false
+cursor = 8
+metadata/_popochiu_aseprite_config_ = {
+"o_folder": "",
+"o_name": "",
+"only_visible_layers": false,
+"op_exp": true,
+"player": "/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/CharacterGoddiu/AnimationPlayer",
+"source": "res://popochiu/characters/goddiu/goddiu.aseprite",
+"tags": [{
+"import": true,
+"loops": true,
+"tag_name": "idle_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "idle_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "talk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_r"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_d"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "walk_u"
+}, {
+"import": true,
+"loops": true,
+"tag_name": "jump"
+}],
+"wipe_old_anims": true
+}
+
+[node name="CharacterPopsy *" type="Area2D" parent="Characters" instance=ExtResource("12_r84fr")]
+position = Vector2(240, 111)
+script = ExtResource("13_xg1sb")
+text_color = Color(0.768627, 0.423529, 0.443137, 1)
+flips_when = 1
+popochiu_placeholder = null
+script_name = "Popsy"
+description = "Popsy"
+cursor = 8

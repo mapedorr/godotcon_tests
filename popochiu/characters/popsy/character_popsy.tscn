@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwe7sprb4aafo"]
+
+[ext_resource type="Script" path="res://popochiu/characters/popsy/character_popsy.gd" id="1_yrvb0"]
+[ext_resource type="AnimationLibrary" uid="uid://bxsyyse83k2gl" path="res://popochiu/characters/popsy/popsy_animations.tres" id="2_1pxko"]
+[ext_resource type="Resource" uid="uid://cdgglo3jcuxt0" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_04.tres" id="2_qdnoc"]
+[ext_resource type="Texture2D" uid="uid://b3on3fpcnd8tn" path="res://popochiu/characters/popsy/popsy.png" id="3_iog4b"]
+[ext_resource type="Resource" uid="uid://b54u6oosofgf" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_05.tres" id="3_iwk2l"]
+[ext_resource type="Resource" uid="uid://7n5v6b6bbfs1" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_03.tres" id="4_4wqt2"]
+[ext_resource type="Resource" uid="uid://1xucoj60xoq3" path="res://popochiu/characters/popsy/audio/vo_popsy_happy_06.tres" id="5_t748o"]
+[ext_resource type="Resource" uid="uid://dkcb5vxfxcayc" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_03.tres" id="6_cs0l2"]
+[ext_resource type="Resource" uid="uid://c8cqbdrlinew7" path="res://popochiu/characters/popsy/audio/vo_popsy_sad_05.tres" id="7_sxev1"]
+
+[node name="CharacterPopsy" type="Area2D"]
+script = ExtResource("1_yrvb0")
+text_color = Color(0.768627, 0.423529, 0.443137, 1)
+flips_when = 1
+voices = [{
+"emotion": "",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("2_qdnoc"), ExtResource("3_iwk2l")])
+}, {
+"emotion": "happy",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("4_4wqt2"), ExtResource("5_t748o")])
+}, {
+"emotion": "sad",
+"variations": Array[Resource("res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd")]([ExtResource("6_cs0l2"), ExtResource("7_sxev1")])
+}]
+popochiu_placeholder = null
+script_name = "Popsy"
+description = "Popsy"
+walk_to_point = Vector2(-45, -12)
+cursor = 8
+
+[node name="InteractionPolygon" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-16, -18, 3, -26, 20, -17, 19, 1, -2, 7, -25, 1)
+
+[node name="BaselineHelper" type="Line2D" parent="."]
+points = PackedVector2Array(-10000, 0, 10000, 0)
+width = 1.0
+
+[node name="WalkToHelper" type="Marker2D" parent="."]
+position = Vector2(-45, -12)
+
+[node name="ColorRect" type="ColorRect" parent="WalkToHelper"]
+offset_left = -2.5
+offset_top = -2.5
+offset_right = 2.5
+offset_bottom = 2.5
+color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": ExtResource("2_1pxko")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -9)
+texture = ExtResource("3_iog4b")
+hframes = 3
+vframes = 3
+
+[node name="DialogPos" type="Marker2D" parent="."]
+position = Vector2(2, -25)

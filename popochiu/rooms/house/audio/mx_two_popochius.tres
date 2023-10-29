@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioCueMusic" load_steps=3 format=3 uid="uid://doews4cbm1xqb"]
+
+[ext_resource type="AudioStream" uid="uid://diaxown54ighx" path="res://popochiu/rooms/house/audio/mx_two_popochius.ogg" id="1_bjgwu"]
+[ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_music.gd" id="2_h5frj"]
+
+[resource]
+resource_name = "mx_two_popochius"
+script = ExtResource("2_h5frj")
+audio = ExtResource("1_bjgwu")
+loop = true
+is_2d = false
+pitch = 1.0
+volume = -12.0
+rnd_pitch = Vector2(0, 0)
+rnd_volume = Vector2(0, 0)
+max_distance = 2000
+attenuation = 1.0
+bus = "Master"

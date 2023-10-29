@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5ofn82jl7ri"]
+
+[ext_resource type="Texture2D" uid="uid://16bdlmncqllj" path="res://popochiu/inventory_items/hook/hook.png" id="1_j23c8"]
+[ext_resource type="Script" path="res://popochiu/inventory_items/hook/item_hook.gd" id="1_l286v"]
+
+[node name="ItemHook" type="TextureRect"]
+texture_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+texture = ExtResource("1_j23c8")
+stretch_mode = 5
+script = ExtResource("1_l286v")
+description = "Hook"
+script_name = "Hook"
