@@ -15,7 +15,6 @@ func _on_click() -> void:
 		0:
 			await C.Goddiu.say("It is closed")
 		1:
-			await I.Key.remove()
 			await change_frame(2)
 			await C.player.say("There is a hook!", "happy")
 			await C.player.say("I'm gonna use it to grab the apple")
@@ -41,6 +40,7 @@ func _on_item_used(item: PopochiuInventoryItem) -> void:
 	await C.player.face_clicked()
 	
 	if item == I.Key:
+		item.remove()
 		await change_frame(1)
 		await C.player.say("Now it is open")
 

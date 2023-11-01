@@ -120,12 +120,12 @@ func _change_cursor(item: PopochiuInventoryItem) -> void:
 
 func _on_graphic_interface_blocked() -> void:
 	set_process_input(false)
-	hide()
+#	hide()
 
 
 func _on_graphic_interface_unblocked() -> void:
 	set_process_input(true)
-	show()
+#	show()
 
 
 func _add_item(item: PopochiuInventoryItem, animate := true) -> void:

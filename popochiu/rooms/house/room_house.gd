@@ -20,11 +20,12 @@ func _on_room_entered() -> void:
 # What happens when the room changing transition finishes. At this point the room
 # is visible.
 func _on_room_transition_finished() -> void:
-	if C.player.last_room != "Outside":
-		await C.Goddiu.say("Hi")
-		await C.Popsy.say("Hi")
-		await C.Goddiu.say("We're in the GodotCon!!!", "happy")
-		await C.Popsy.say("[wave]Yeeeeeyyyyyy[/wave]", "happy")
+	pass
+#	if C.player.last_room != "Outside":
+#		await C.Goddiu.say("Hi")
+#		await C.Popsy.say("Hi")
+#		await C.Goddiu.say("We're in the GodotCon!!!", "happy")
+#		await C.Popsy.say("[wave]Yeeeeeyyyyyy[/wave]", "happy")
 
 
 # What happens before Popochiu unloads the room.
