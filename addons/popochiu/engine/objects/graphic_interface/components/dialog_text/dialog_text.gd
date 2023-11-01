@@ -84,10 +84,11 @@ func play_text(props: Dictionary) -> void:
 		get_theme_font("normal_font")
 	)
 	rt.bbcode_enabled = true
-	rt.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	rt.autowrap_mode = TextServer.AUTOWRAP_OFF
 	rt.text = msg
-	rt.size = get_meta(DFLT_SIZE)
+#	rt.size = get_meta(DFLT_SIZE)
 	add_child(rt)
+	prints("rt.size", rt.size)
 	
 	# Create a Label to check if the text exceeds the wrap_width
 	var lbl := Label.new()
@@ -96,14 +97,10 @@ func play_text(props: Dictionary) -> void:
 		get_theme_font("normal_font")
 	)
 	
-	match E.current_dialog_style:
-		0:
-			lbl.size.y = get_meta(DFLT_SIZE).y
-		_:
-			lbl.size = get_meta(DFLT_SIZE)
-	
-	lbl.text = rt.get_parsed_text()
+	lbl.size = get_meta(DFLT_SIZE)
 	add_child(lbl)
+	lbl.text = rt.get_parsed_text()
+	prints("1 _size", lbl.size)
 	
 	rt.clear()
 	rt.text = ""
@@ -111,7 +108,7 @@ func play_text(props: Dictionary) -> void:
 	await get_tree().process_frame
 	
 	var _size := lbl.size
-	
+	prints("2 _size", _size, lbl.text)
 	if _size.x > wrap_width:
 		# This node will have the width of the wrap_width
 		_size.x = wrap_width
@@ -141,7 +138,7 @@ func play_text(props: Dictionary) -> void:
 			size = _size
 			position = props.position - size / 2.0
 			position.y -= size.y / 2.0
-			
+			prints("size size", size)
 			# Calculate overflow and reposition
 			if position.x < 0.0:
 				position.x = limit_margin
@@ -173,7 +170,9 @@ func play_text(props: Dictionary) -> void:
 		1:
 			append_text(msg)
 		2:
-			text = '[center]%s[/center]' % msg
+			text = '[center][color=%s]%s[/color][/center]' % [
+				props.color.to_html(), msg
+			]
 	
 	match E.current_dialog_style:
 		0,1:
