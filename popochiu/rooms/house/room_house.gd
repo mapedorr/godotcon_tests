@@ -14,6 +14,8 @@ var state: Data = load('res://popochiu/rooms/house/room_house.tres')
 # What happens when Popochiu loads the room. At this point the room is in the
 # tree but it is not visible
 func _on_room_entered() -> void:
+	A.mx_two_popochius.play()
+	
 	if C.player.last_room == "Outside":
 		A.sfx_door_close.play()
 
@@ -23,9 +25,9 @@ func _on_room_entered() -> void:
 func _on_room_transition_finished() -> void:
 	if C.player.last_room != "Outside":
 		await C.Goddiu.say("Hi")
-		await C.Popsy.say("Hi ya!")
-		await C.Goddiu.say("We are the [rainbow]GodotCon[/rainbow]!!!")
-		await C.Popsy.say("[shake]I CAN'T BELIVE IT[/shake]")
+		await C.Popsy.say("Hi")
+		await C.Goddiu.say("We are in the [rainbow]GodotCon[/rainbow]!!!")
+		await C.Popsy.say("[shake]YEEEEYYYYYYY[/shake]")
 
 
 # What happens before Popochiu unloads the room.

@@ -17,13 +17,13 @@ func _option_selected(opt: PopochiuDialogOption) -> void:
 		"How":
 			await E.queue([
 				"Player: How are you today?",
-				"Popsy: I'm... fine",
-				"Player: Are you sure?",
-				C.Popsy.queue_face_right(),
-				"...",
-				"Player: What happened?",
-				C.Popsy.queue_face_left(),
-				"Popsy(sad): [shake]I'M HUNGRY!!![/shake]"
+				"Popsy(sad): I'm... sad",
+				"Player: Why?",
+#				C.Popsy.queue_face_right(),
+#				"...",
+#				"Player: What happened?",
+#				C.Popsy.queue_face_left(),
+				"Popsy(sad): [shake]BECAUSE I'M HUNGRY!!![/shake]"
 			])
 			
 			opt.turn_off()

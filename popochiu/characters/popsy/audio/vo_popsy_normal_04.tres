@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="AudioCueSound" load_steps=3 format=3 uid="uid://b160hdjr0a6hr"]
 
-[ext_resource type="AudioStream" uid="uid://br2vdcsundx5t" path="res://popochiu/characters/Popsy/audio/vo_popsy_normal_04.ogg" id="1_0b5gc"]
+[ext_resource type="AudioStream" uid="uid://cyogq0df8nhsc" path="res://popochiu/characters/popsy/audio/vo_popsy_normal_04.ogg" id="1_sg33q"]
 [ext_resource type="Script" path="res://addons/popochiu/engine/audio_manager/audio_cue_sound.gd" id="2_hs6ya"]
 
 [resource]
 resource_name = "vo_popsy_normal_04"
 script = ExtResource("2_hs6ya")
-audio = ExtResource("1_0b5gc")
+audio = ExtResource("1_sg33q")
 loop = false
 is_2d = false
 pitch = 1.0

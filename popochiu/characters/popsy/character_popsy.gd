@@ -29,11 +29,12 @@ func _on_right_click() -> void:
 # When the node is clicked and there is an inventory item selected
 func _on_item_used(item: PopochiuInventoryItem) -> void:
 	if item == I.Apple:
+		await C.player.walk_to_clicked()
 		await I.Apple.remove()
 		await C.Goddiu.say("Here it is")
-		await C.Goddiu.say("An apple for ya")
+#		await C.Goddiu.say("An apple for ya")
 		await C.Popsy.say("[wave]Yeeeeeyyyyyyy[/wave]", "happy")
-		await C.Popsy.say("But I want a GREEN apple!")
+		await C.Popsy.say("But I want a GREEN apple!", "sad")
 		
 		Globals.going_to_the_end = true
 		E.goto_room("TheEnd")
